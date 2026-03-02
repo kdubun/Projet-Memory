@@ -11,9 +11,6 @@ Application web React + TypeScript + Vite illustrant une application de répéti
   - `npm install`
 - **Lancement en développement**:
   - `npm run dev`
-- **Build de production**:
-  - `npm run build`
-  - `npm run preview` pour prévisualiser le build localement.
 
 ### 2. Fonctionnalités implémentées
 
@@ -92,7 +89,7 @@ Application web React + TypeScript + Vite illustrant une application de répéti
     - un ensemble réduit de cartes avec des emojis illustratifs.
 - **Import des données de test**:
   - Au premier chargement, les données de test sont injectées automatiquement dans le `localStorage` si aucune donnée n’est présente.
-  - Sur la page d’accueil, section « Données de test », cliquer sur le bouton **« Actualiser les données de test »** permet de ré-initialiser les données (pratique pour les démonstrations).
+  - Sur la page d’accueil, section « Données de test », cliquer sur le bouton **« Actualiser les données de test »** permet de ré-initialiser les données.
   - Les données sont stockées dans les clés:
     - `memory.categories`
     - `memory.themes`
