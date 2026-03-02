@@ -70,32 +70,18 @@ Application web React + TypeScript + Vite illustrant une application de répéti
   - Focus visible sur les éléments interactifs.
   - Navigation au clavier (Tab/Shift+Tab).
   - Storybook est configuré avec l’addon `@storybook/addon-a11y` pour aider aux audits.
-  - **Rapport d’accessibilité (WAVE)** à placer dans un dossier dédié (ex. `docs/accessibilite/`) :
+  - **Rapport d’accessibilité (WAVE) :**
     - Page testée : page d’accueil.
     - Résultats WAVE :
-      - **0 erreurs**, **0 erreurs de contraste**, **1 alerte**.
-      - **7 éléments de structure** (header, nav, main, footer, listes, titres, etc.).
-      - **6 labels ARIA** correctement renseignés.
-      - AIM Score : **10/10**.
-    - Pensez à ajouter la capture d’écran du rapport WAVE (par ex. `docs/accessibilite/wave-accueil.png`) dans votre rendu.
+     <img width="959" height="470" alt="Capture d’écran 2026-03-02 à 17 06 28" src="https://github.com/user-attachments/assets/078bac83-1c3a-4367-b179-dd5ebf0980f5" />
+
 - **Performance**:
   - Vite + React pour un chargement rapide.
   - PWA configurée pour mise en cache des assets.
-  - Pour obtenir un rapport Lighthouse:
-    - Lancer l’application (`npm run dev` ou `npm run preview`).
-    - Ouvrir l’onglet Lighthouse dans les DevTools du navigateur et exécuter un audit (mobile + PWA).
-  - **Rapport Lighthouse** (par ex. `docs/performance/lighthouse-accueil.png` ou `.json`) :
-    - Scores (page d’accueil) :
-      - **Performance** : 86
-      - **Accessibilité** : 93
-      - **Best Practices** : 96
-      - **SEO** : 82
-    - Principales métriques :
-      - **FCP** (First Contentful Paint) : 1,2 s
-      - **LCP** (Largest Contentful Paint) : 2,1 s
-      - **TBT** (Total Blocking Time) : 0 ms
-      - **CLS** (Cumulative Layout Shift) : 0,001
-      - **SI** (Speed Index) : 1,2 s
+  - **Rapport Lighthouse :**
+  - Page testée : page d’accueil.
+  - Résultats WAVE :
+   <img width="959" height="470" alt="Capture d’écran 2026-03-02 à 17 04 39" src="https://github.com/user-attachments/assets/53137639-18a9-4bff-a9ce-e3a40233604e" />
 
 ### 6. Données de test
 
@@ -103,7 +89,7 @@ Application web React + TypeScript + Vite illustrant une application de répéti
   - `src/test-data/memorySeed.ts` contient:
     - 2 catégories (« Langues », « Maths »),
     - 2 thèmes de base (par ex. « Anglais – vocabulaire de base », « Anglais – animaux »),
-    - un ensemble réduit de cartes (environ 10 par thème) avec des emojis illustratifs.
+    - un ensemble réduit de cartes avec des emojis illustratifs.
 - **Import des données de test**:
   - Au premier chargement, les données de test sont injectées automatiquement dans le `localStorage` si aucune donnée n’est présente.
   - Sur la page d’accueil, section « Données de test », cliquer sur le bouton **« Actualiser les données de test »** permet de ré-initialiser les données (pratique pour les démonstrations).
