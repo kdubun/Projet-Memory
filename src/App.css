@@ -1,0 +1,328 @@
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.section-main ul {
+  padding-left: 1.25rem;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.2rem;
+  border-radius: 0.5rem;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.list-item:hover {
+  background-color: rgba(15, 23, 42, 0.02);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.section-side {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
+  animation: panelEnter 260ms ease-out 40ms both;
+}
+
+.section-side h3 {
+  margin-top: 0;
+}
+
+.section-side form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section-side label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.section-side input,
+.section-side textarea,
+.section-side select {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  font: inherit;
+}
+
+.ghost-button {
+  border-radius: 9999px;
+  padding-inline: 0.9rem;
+  padding-block: 0.45rem;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 0.9rem;
+}
+
+.ghost-button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+}
+
+.ghost-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost-button.danger {
+  border-color: #f97316;
+  color: #b91c1c;
+}
+
+.ghost-button.danger:hover:not(:disabled) {
+  background-color: #fef2f2;
+}
+
+.review-card {
+  margin: 1.5rem auto 0;
+  max-width: 420px;
+  padding: 1.25rem 1.5rem 1.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
+  text-align: center;
+  animation: cardPopIn 260ms ease-out;
+}
+
+.review-hint {
+  font-size: 0.9rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.review-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.review-controls label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.review-controls select {
+  min-width: 220px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  font: inherit;
+}
+
+.flashcard-button {
+  margin: 1rem auto 0.75rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 260px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 63 / 88; /* format carte de jeu classique */
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.flashcard-button.is-flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 0.9rem;
+  border: 2px solid #111827;
+  padding: 0.85rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #ffffff;
+  color: #0b1120;
+}
+
+.flashcard-front {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(129, 140, 248, 0.15) 0, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(52, 211, 153, 0.18) 0, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.16) 0, transparent 35%),
+    linear-gradient(135deg, #f9fafb 0, #ffffff 60%);
+}
+
+.flashcard-back {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(248, 250, 252, 1) 0, transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(252, 211, 77, 0.2) 0, transparent 45%),
+    radial-gradient(circle at 20% 85%, rgba(56, 189, 248, 0.18) 0, transparent 40%),
+    linear-gradient(135deg, #ecfdf5 0, #ffffff 55%);
+  transform: rotateY(180deg);
+}
+
+.flashcard-face h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.flashcard-face p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.flashcard-emoji {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .flashcard-button {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+   .section-header {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 0.5rem;
+   }
+
+   .list-item {
+     align-items: flex-start;
+     flex-direction: column;
+   }
+
+   .review-card {
+     margin-top: 1rem;
+   }
+}
+
+.app-header h1 {
+  animation: titleDropIn 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 80ms both;
+}
+
+.app-nav a {
+  position: relative;
+}
+
+.app-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #38bdf8, #a855f7);
+  transition: width 200ms ease-out;
+}
+
+.app-nav a:hover::after,
+.app-nav a[aria-current='page']::after {
+  width: 100%;
+}
+
+@keyframes titleDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes panelEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Bulles (cards) pour header et sections */
+
+.app-header {
+  padding: 1rem 1.25rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
+}
+
+.app-main > section {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1.25rem 1.5rem 1.5rem;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+}
+
+.app-main > section + section {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-main > section {
+    padding: 1rem 1.1rem 1.25rem;
+  }
+}
